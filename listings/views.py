@@ -1,16 +1,16 @@
 from django.shortcuts import render
 from .models import Listing
 from datetime import timedelta
-from django.utils import timezone
+
 # Create your views here.
 def index(request):
     # ! get all data from listing database
     listings = Listing.objects.all()
     # ! pass database records into listings context
-    context = {'listings':listings, 'date': timezone.now()}
+    context = {'listings':listings}
     return render(request, 'listings/listings.html', context )
 
-def listing(request):
+def listing(request, listing_id):
     return render(request, 'listings/listing.html')
 
 def search(request):
