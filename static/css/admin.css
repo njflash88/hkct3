@@ -1,6 +1,6 @@
 #header {
     height: 50px;
-    background: #293C5F
+    background: #293C5F;
     color: #fff;
 }
 
@@ -13,7 +13,7 @@ a:visited {
 }
 
 div.breadcrumbs {
-    background: #30caa0;
+    background: #3070ca;
     color: #586d8a
 }
 div.breadcrumbs a {
