@@ -19,10 +19,10 @@
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="index.html">Home</a>
+              <a href={% url "index" %}>Home</a>
             </li>
             <li class="breadcrumb-item">
-              <a href="listings.html">Listings</a>
+              <a href={% url "listings" %}>Listings</a>
             </li>
             <li class="breadcrumb-item active">{{listing.street}}</li>
           </ol>
@@ -33,7 +33,7 @@
 <!-- Listing -->
     <section id="listing" class="py-4">
       <div class="container">
-        <a href="listings.html" class="btn btn-light mb-4">Back To Listings</a>
+        <a href={% url "listings" %} class="btn btn-light mb-4">Back To Listings</a>
         <div class="row">
           <div class="col-md-9">
             <!-- Home Main Image -->
@@ -45,76 +45,88 @@
             <!-- Thumbnails -->
             <div class="row mb-5 thumbs">
               <div class="col-md-2">
+                {% if listing.photo_1 %}
                 <a
-                  href="{{MEDIA_URL}}{{listing.photo_1}}"
+                  href={{listing.photo_1.url}}
                   data-lightbox="home-images"
                 >
                   <img
-                    src="{{MEDIA_URL}}{{listing.photo_1}}"
+                    src={{listing.photo_1.url}}
                     alt=""
                     class="img-fluid"
                   />
                 </a>
+                {% endif %}
               </div>
               <div class="col-md-2">
+                {% if listing.photo_2 %}
                 <a
-                  href="{{MEDIA_URL}}{{listing.photo_2}}"
+                  href={{listing.photo_2.url}}
                   data-lightbox="home-images"
                 >
                   <img
-                    src="{{MEDIA_URL}}{{listing.photo_2}}"
+                    src={{listing.photo_2.url}}
                     alt=""
                     class="img-fluid"
                   />
                 </a>
+                {% endif %}
               </div>
               <div class="col-md-2">
+                {% if listing.photo_3 %}
                 <a
-                  href="{{MEDIA_URL}}{{listing.photo_3}}"
+                  href={{listing.photo_3.url}}
                   data-lightbox="home-images"
                 >
                   <img
-                    src="{{MEDIA_URL}}{{listing.photo_3}}"
+                    src={{listing.photo_3.url}}
                     alt=""
                     class="img-fluid"
                   />
                 </a>
+                {% endif %}
               </div>
               <div class="col-md-2">
+                {% if listing.photo_4 %}
                 <a
-                  href="{{MEDIA_URL}}{{listing.photo_4}}"
+                  href={{listing.photo_4.url}}
                   data-lightbox="home-images"
                 >
                   <img
-                    src="{{MEDIA_URL}}{{listing.photo_4}}"
+                    src={{listing.photo_4.url}}
                     alt=""
                     class="img-fluid"
                   />
                 </a>
+                {% endif %}
               </div>
               <div class="col-md-2">
+                {% if listing.photo_5 %}
                 <a
-                  href="{{MEDIA_URL}}{{listing.photo_5}}"
+                  href={{listing.photo_5.url}}
                   data-lightbox="home-images"
                 >
                   <img
-                    src="{{MEDIA_URL}}{{listing.photo_5}}"
+                    src={{listing.photo_5.url}}
                     alt=""
                     class="img-fluid"
                   />
                 </a>
+                {% endif %}
               </div>
               <div class="col-md-2">
+                {% if listing.photo_6 %}
                 <a
-                  href="{{MEDIA_URL}}{{listing.photo_6}}"
+                  href={{listing.photo_6.url}}
                   data-lightbox="home-images"
                 >
                   <img
-                    src=""{{MEDIA_URL}}{{listing.photo_6}}"
+                    src={{listing.photo_6.url}}
                     alt=""
                     class="img-fluid"
                   />
                 </a>
+                {% endif %}
               </div>
             </div>
             <!-- Fields -->
@@ -176,7 +188,7 @@
             <div class="card mb-3">
               <img
                 class="card-img-top"
-                src="/Users/flash88/Public/python project/media/photo/2024/09/04/kyle.jpg"
+                src={{listing.realtor.photo.url}}
                 alt="Seller of the month"
               />
               <div class="card-body">

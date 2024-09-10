@@ -17,7 +17,7 @@ def index(request):
     return render(request, 'listings/listings.html', context )
 
 def listing(request, listing_id):
-    listing = get_object_or_404(Listing, id=listing_id)
+    listing = get_object_or_404(Listing, pk=listing_id)
     # print("*** *** listing=", listing_id, listing.address, listing.description)
     return render(request, 'listings/listing.html', {'listing':listing})
 
