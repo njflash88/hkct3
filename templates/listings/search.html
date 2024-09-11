@@ -38,7 +38,7 @@
                     </option>
                     {% for key,value in district_choices.items %}
                     <option value="{{key}}" 
-                    {% if key == values.district %} selected {% endif %}
+                    {% if key == values.district %} {% endif %}
                     >{{value}}</option>
                     {% endfor %}
                   </select>
@@ -170,6 +170,8 @@
 
 
         </div>
+        <p style"font-size: 25 px;" color=orange ; cursor=pointer;
+        > Total Search Results: {{total}}</p>
       </div>
     </section>
 {% endblock %}

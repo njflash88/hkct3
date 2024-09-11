@@ -31,7 +31,6 @@ def search(request):
             
     if 'title' in request.GET:
         title = request.GET['title']
-        print(title)
         if title:
             queryset_list = queryset_list.filter(title__icontains=title)
             
@@ -54,6 +53,7 @@ def search(request):
         'price_choices': price_choices,
         'bedroom_choices': bedroom_choices,
         'district_choices': district_choices,
-        'values': request.GET
+        'values': request.GET,
+        'total': len(queryset_list)
     }
     return render(request, 'listings/search.html', context)
