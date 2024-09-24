@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
 ]
 
 MIDDLEWARE = [
@@ -148,3 +149,9 @@ MESSAGE_TAGS = {
     messages.INFO : 'info',
     messages.WARNING : 'warning',
 }
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_POST = 587
+EMAIL_HOST_USER = 'gordonchu88@yahoo.com'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_USE_TLS = True
